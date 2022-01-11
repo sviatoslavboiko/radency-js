@@ -1,0 +1,13 @@
+.main-table {
+  max-height: 345px;
+  overflow-y: scroll;
+}
+.main-table thead th {
+  position: sticky; 
+  top: 0; 
+}
+
+.statistics-table {
+  max-height: 246px;
+  overflow: hidden;
+}
