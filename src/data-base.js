@@ -40,24 +40,3 @@ export const dbNotes = [
   id: 336
 }]
 
-export const dbNoteStatistics = [
-{
-  name: 'Task',
-  active: 2,
-  archived: 0
-},
-{
-  name: 'Random Thought',
-  active: 1,
-  archived: 0
-},
-{
-  name: 'Idea',
-  active: 1,
-  archived: 0
-},
-{
-  name: 'Quote',
-  active: 1,
-  archived: 0
-}]

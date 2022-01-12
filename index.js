@@ -1,5 +1,6 @@
 import { createNote } from "./src/create-note.js"
-import { dbNotes, dbNoteStatistics } from "./src/data-base.js"
+import { createNoteStatistics } from "./src/notes-statistics.js"
+import { dbNotes } from "./src/data-base.js"
 import { renderNotes, renderNotesStatistics, renderArchivedNotes } from "./src/render.js"
 
 const btnCreateNoteModal = document.querySelector('.btn-create-note-modal')
@@ -7,14 +8,14 @@ const mainTable = document.querySelector('.main-table')
 const btnArcivedNotes = document.querySelector('.archived-btn')
 const btnCollectionNotes = document.querySelector('.all-collection')
 
-export const arcivedNotes = []
 export const notes = dbNotes 
-export const noteStatistics = dbNoteStatistics 
+export const arcivedNotes = []
+export const noteStatistics = [] 
 
 const main = async ()=> {
   try {
     renderNotes()
-    renderNotesStatistics(noteStatistics)
+    renderNotesStatistics(createNoteStatistics())
 
   } catch (error) {
     throw new Error(error)
@@ -47,6 +48,7 @@ mainTable.addEventListener('click', e => {
     elem.classList.remove('my-cell');
     elem.classList.add('d-none');
     notes.splice(indexOfElement, 1);
+    renderNotesStatistics(createNoteStatistics())
   }
 })
 
@@ -74,6 +76,7 @@ mainTable.addEventListener('click', e => {
     btn.classList.remove('archive');
     arcivedNotes.push(notes[indexOfElement]);
     notes.splice(indexOfElement, 1);
+    renderNotesStatistics(createNoteStatistics())
   }
   else if(btn.classList.contains('archived')){
 
@@ -82,6 +85,7 @@ mainTable.addEventListener('click', e => {
     btn.classList.remove('archived');
     notes.push(arcivedNotes[indexOfElementArchived]);
     arcivedNotes.splice(indexOfElementArchived, 1);
+    renderNotesStatistics(createNoteStatistics())
   }
 })
 
