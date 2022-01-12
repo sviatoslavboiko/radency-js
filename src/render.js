@@ -22,7 +22,7 @@ export const renderNotes = () => {
     <td>${name}</td>
     <td>${created}</td>
     <td>${category}</td>
-    <td>${content}</td>
+    <td class="content-cell">${content}</td>
     <td>${dates}</td>
     <td>
       <input type="image" src="src/img/pencil-fill.svg" class="btn edit" id="${'edt' + id}"></input>
@@ -47,7 +47,7 @@ export const renderArchivedNotes = () => {
     <td>${name}</td>
     <td>${created}</td>
     <td>${category}</td>
-    <td>${content}</td>
+    <td class="content-cell">${content}</td>
     <td>${dates}</td>
     <td>
       <input type="image" src="src/img/archive-fill.svg" class="btn archived" id="${'arc' + id}"></input>

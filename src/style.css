@@ -16,7 +16,15 @@
 .archived {
   margin-left: 2.83rem;
 }
+
 .archived-btn {
   margin-left: 2.83rem;
   color: white
+}
+
+.content-cell {
+  white-space: nowrap;
+  max-width: 8rem; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
 }
