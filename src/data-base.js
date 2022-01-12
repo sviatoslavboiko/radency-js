@@ -39,4 +39,3 @@ export const dbNotes = [
   dates: '',
   id: 336
 }]
-

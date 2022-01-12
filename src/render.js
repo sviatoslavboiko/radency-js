@@ -1,11 +1,11 @@
-import { IMG } from './img.js';
+import { IMG } from './img.js'
 import { noteStatuses } from './enums.js'
 import { notes, arcivedNotes } from './../index.js'
 const mainTable = document.querySelector('.main-tbody')
 const statisticsTable = document.querySelector('.statistics-tbody')
 
 function getKeyByValue(object, value) {
-  return Object.keys(object).find(key => object[key] === value);
+  return Object.keys(object).find(key => object[key] === value)
 }
 
 export const renderNotes = () => {

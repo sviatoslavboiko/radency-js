@@ -3,4 +3,4 @@ export const noteStatuses = Object.freeze({
   RANDOM_THOUGHT: 'Random Thought',
   IDEA: 'Idea',
   QUOTE: 'Quote'
-});
+})
