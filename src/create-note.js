@@ -15,7 +15,7 @@ export const createNote = async () => {
       alert(`Please enter note content!`)
     }
     else{
-      notes.push({name: inputName, created: new Date().toLocaleDateString("en-US", options), category: inputCategory, content: inputContent, dates: ''})
+      notes.push({name: inputName, created: new Date().toLocaleDateString("en-US", options), category: inputCategory, content: inputContent, dates: '', id: Math.trunc(Math.random() * 10000)})
       renderNotes(notes)
     }
   } catch (error) {
