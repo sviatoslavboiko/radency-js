@@ -16,7 +16,7 @@ export const notes = dbNotes
 export const arcivedNotes = []
 export const noteStatistics = [] 
 
-const main = async () => {
+const main = () => {
   try {
     renderNotes()
     renderNotesStatistics(createNoteStatistics())
