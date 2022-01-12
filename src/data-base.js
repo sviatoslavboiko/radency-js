@@ -1,4 +1,4 @@
-export const notes = [
+export const dbNotes = [
 {
   name: 'Shopping list', 
   created: 'April 20, 2021', 
@@ -40,24 +40,24 @@ export const notes = [
   id: 336
 }]
 
-export const noteStatistics = [
+export const dbNoteStatistics = [
 {
   name: 'Task',
-  active: 13,
-  archived: 4
+  active: 2,
+  archived: 0
 },
 {
   name: 'Random Thought',
-  active: 7,
-  archived: 12
+  active: 1,
+  archived: 0
 },
 {
   name: 'Idea',
-  active: 5,
-  archived: 9
+  active: 1,
+  archived: 0
 },
 {
   name: 'Quote',
-  active: 3,
-  archived: 4
+  active: 1,
+  archived: 0
 }]
