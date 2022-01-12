@@ -37,7 +37,7 @@
 
     <div class="row">
       <div class="col p-0">
-        <button type="button" class="btn btn-dark mb-3 float-right btn-create-note" data-toggle="modal" data-target="#exampleModal">Create Note</button>
+        <button type="button" class="btn btn-dark mb-3 float-right btn-create-note" data-toggle="modal" data-target="#createNoteModal">Create Note</button>
       </div>
     </div>
   
@@ -56,7 +56,7 @@
       </table>
     </div>
     
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="createNoteModal" tabindex="-1" role="dialog" aria-labelledby="createNoteModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-body">
@@ -78,7 +78,36 @@
                 <label for="contentTextarea">Content</label>
                 <textarea class="form-control" id="contentTextarea" rows="3"></textarea>
               </div>
-              <button type="button" class="btn btn-success float-right btn-create-note-modal" data-dismiss="modal">Create</button>
+              <button type="button" class="btn btn-dark float-right btn-create-note-modal" data-dismiss="modal">Create</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="editNoteModal" tabindex="-2" role="dialog" aria-labelledby="editNoteModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <form class="create-note-form">
+              <div class="form-group">
+                <label for="inputEditName">Name</label>
+                <input type="text" class="form-control" id="inputEditName">
+              </div>
+              <div class="form-group">
+                <label for="inputCategory">Category</label>
+                <select id="inputEditCategory" class="form-control">
+                  <option value="Task">Task</option>
+                  <option value="Random Thought">Random Thought</option>
+                  <option value="Idea">Idea</option>
+                  <option value="Quote">Quote</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="contentEditTextarea">Content</label>
+                <textarea class="form-control" id="contentEditTextarea" rows="3"></textarea>
+              </div>
+              <button type="button" class="btn btn-dark float-right btn-edit-note-modal" data-dismiss="modal">Edit</button>
             </form>
           </div>
         </div>

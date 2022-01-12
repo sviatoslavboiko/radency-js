@@ -1,9 +1,11 @@
 import { createNote } from "./src/create-note.js"
+import { editNote } from "./src/edit-note.js"
 import { createNoteStatistics } from "./src/notes-statistics.js"
 import { dbNotes } from "./src/data-base.js"
 import { renderNotes, renderNotesStatistics, renderArchivedNotes } from "./src/render.js"
 
 const btnCreateNoteModal = document.querySelector('.btn-create-note-modal')
+const btnEditNoteModal = document.querySelector('.btn-edit-note-modal')
 const mainTable = document.querySelector('.main-table')
 const btnArcivedNotes = document.querySelector('.archived-btn')
 const btnCollectionNotes = document.querySelector('.all-collection')
@@ -26,6 +28,34 @@ main()
 
 // create note
 btnCreateNoteModal.addEventListener('click', createNote)
+
+// edit note
+let tmpIndex
+
+mainTable.addEventListener('click', e => {
+  const id = e.target.id;
+  const btn = document.getElementById(`${id}`);
+
+  if(!id){
+    return;
+  }
+  if(!btn) {
+    return;
+  }
+
+  const inputEditName = document.getElementById('inputEditName')
+  const inputEditCategory = document.getElementById('inputEditCategory')
+  const contentEditTextarea = document.getElementById('contentEditTextarea')
+  const matchId = +id.match(/^.{3}(.*)/)[1]
+  let indexOfElement = notes.map(element => element.id).indexOf(matchId)
+
+  inputEditName.value = notes[indexOfElement].name;
+  inputEditCategory.value = notes[indexOfElement].category;
+  contentEditTextarea.value = notes[indexOfElement].content
+  tmpIndex = indexOfElement
+});
+
+btnEditNoteModal.addEventListener('click', () => editNote(tmpIndex))
 
 // remove note
 mainTable.addEventListener('click', e => {

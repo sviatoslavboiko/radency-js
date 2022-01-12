@@ -11,7 +11,7 @@ export const dbNotes = [
   name: 'The theory evolution', 
   created: 'April 27, 2021', 
   category: 'Random Thought', 
-  content: 'The evolution...', 
+  content: 'The theory of evolution is a shortened form of the term “theory of evolution by natural selection,” which was proposed by Charles Darwin and Alfred Russel Wallace in the nineteenth century.', 
   dates: '', 
   id: 315
 },
@@ -19,7 +19,7 @@ export const dbNotes = [
   name: 'New Feature', 
   created: 'May 05, 2021', 
   category: 'Idea', 
-  content: 'Implement new...', 
+  content: 'Implement new feature', 
   dates: '3/5/2021, 5/5/2021',
   id: 458
 },
@@ -27,7 +27,7 @@ export const dbNotes = [
   name: 'William Gaddis', 
   created: 'May 07, 2021', 
   category: 'Quote', 
-  content: 'Power doesn\'t co...', 
+  content: 'Power doesn\'t corrupt people, people corrupt power.', 
   dates: '',
   id: 883
 },

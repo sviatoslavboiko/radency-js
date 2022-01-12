@@ -4,10 +4,10 @@ import { createNoteStatistics } from "./notes-statistics.js"
 import { renderNotesStatistics } from "./render.js"
 const options = { month: 'long', day: 'numeric', year: 'numeric'};
 
-export const createNote = async () => {
-  let inputName = await document.querySelector('#inputName').value
-  let inputCategory = await document.querySelector('#inputCategory').value
-  let inputContent = await document.querySelector('#contentTextarea').value
+export const createNote = () => {
+  let inputName = document.getElementById('inputName').value
+  let inputCategory = document.getElementById('inputCategory').value
+  let inputContent = document.getElementById('contentTextarea').value
 
   try {
     if(!inputName){
@@ -17,6 +17,7 @@ export const createNote = async () => {
       alert(`Please enter note content!`)
     }
     else{
+      
       notes.push({name: inputName, created: new Date().toLocaleDateString("en-US", options), category: inputCategory, content: inputContent, dates: '', id: Math.trunc(Math.random() * 10000)})
       renderNotes(notes)
       renderNotesStatistics(createNoteStatistics())
