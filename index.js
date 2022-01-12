@@ -1,5 +1,5 @@
 import { createNote } from "./src/create-note.js"
-import { dbNotes, noteStatistics } from "./src/data-base.js"
+import { dbNotes, dbNoteStatistics } from "./src/data-base.js"
 import { renderNotes, renderNotesStatistics, renderArchivedNotes } from "./src/render.js"
 
 const btnCreateNoteModal = document.querySelector('.btn-create-note-modal')
@@ -9,7 +9,7 @@ const btnCollectionNotes = document.querySelector('.all-collection')
 
 export const arcivedNotes = []
 export const notes = dbNotes 
-export const noteStatistics = noteStatistics 
+export const noteStatistics = dbNoteStatistics 
 
 const main = async ()=> {
   try {

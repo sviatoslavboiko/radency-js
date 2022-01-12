@@ -40,7 +40,7 @@ export const dbNotes = [
   id: 336
 }]
 
-export const noteStatistics = [
+export const dbNoteStatistics = [
 {
   name: 'Task',
   active: 2,
