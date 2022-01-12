@@ -2,6 +2,7 @@
   max-height: 345px;
   overflow-y: scroll;
 }
+
 .main-table thead th {
   position: sticky; 
   top: 0; 
@@ -10,4 +11,12 @@
 .statistics-table {
   max-height: 246px;
   overflow: hidden;
+}
+
+.archived {
+  margin-left: 2.83rem;
+}
+.archived-btn {
+  margin-left: 2.83rem;
+  color: white
 }

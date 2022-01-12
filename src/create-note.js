@@ -1,4 +1,4 @@
-import { notes } from "./data-base.js";
+import { notes } from "./../index.js";
 import { renderNotes } from "./render.js"
 const options = { month: 'long', day: 'numeric', year: 'numeric'};
 
