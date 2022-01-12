@@ -25,7 +25,7 @@ export const renderNotes = () => {
     <td class="content-cell">${content}</td>
     <td>${dates}</td>
     <td>
-      <input type="image" src="src/img/pencil-fill.svg" class="btn edit" id="${'edt' + id}"></input>
+      <input type="image" src="src/img/pencil-fill.svg" class="btn edit" id="${'edt' + id}" data-toggle="modal" data-target="#editNoteModal"></input>
       <input type="image" src="src/img/archive-fill.svg" class="btn archive" id="${'arc' + id}"></input>
       <input type="image" src="src/img/trash-fill.svg" class="btn remove" id="${'del' + id}"></input>
     </td>
