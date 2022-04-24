@@ -9,11 +9,11 @@ import { renderNotes, renderNotesStatistics, renderArchivedNotes } from "./src/r
 const btnCreateNoteModal = document.querySelector('.btn-create-note-modal')
 const btnEditNoteModal = document.querySelector('.btn-edit-note-modal')
 const mainTable = document.querySelector('.main-table')
-const btnArcivedNotes = document.querySelector('.archived-btn')
+const btnArchivedNotes = document.querySelector('.archived-btn')
 const btnCollectionNotes = document.querySelector('.all-collection')
 
 export const notes = dbNotes 
-export const arcivedNotes = []
+export const archivedNotes = []
 export const noteStatistics = [] 
 
 const main = () => {
@@ -46,4 +46,4 @@ mainTable.addEventListener('click', e => archiveNote(e))
 btnCollectionNotes.addEventListener('click', () => renderNotes())
 
 // open archived notes
-btnArcivedNotes.addEventListener('click', () => renderArchivedNotes())
+btnArchivedNotes.addEventListener('click', () => renderArchivedNotes())

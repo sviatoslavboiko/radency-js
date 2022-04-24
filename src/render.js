@@ -1,6 +1,6 @@
 import { IMG } from './img.js'
 import { noteStatuses } from './enums.js'
-import { notes, arcivedNotes } from './../index.js'
+import { notes, archivedNotes } from './../index.js'
 const mainTable = document.querySelector('.main-tbody')
 const statisticsTable = document.querySelector('.statistics-tbody')
 
@@ -37,7 +37,7 @@ export const renderNotes = () => {
 export const renderArchivedNotes = () => {
 
   mainTable.innerHTML = ``
-  for (const {name, created, category, content, dates, id} of arcivedNotes) {
+  for (const {name, created, category, content, dates, id} of archivedNotes) {
 
     const imgCategory = getKeyByValue(noteStatuses, category)
     

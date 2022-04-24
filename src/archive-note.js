@@ -1,7 +1,16 @@
 import { notes } from "./../index.js"
-import { arcivedNotes } from "./../index.js"
+import { archivedNotes } from "./../index.js"
 import { createNoteStatistics } from "./notes-statistics.js"
 import { renderNotesStatistics } from "./render.js"
+
+const archiveOneNote = (notes, archivedNotes, indexOfElementArchived, elem, btn) => {
+  elem.classList.toggle('d-none')
+  btn.classList.remove('archive')
+  btn.classList.toggle('archived')
+  notes.push(archivedNotes[indexOfElementArchived])
+  archivedNotes.splice(indexOfElementArchived, 1)
+  renderNotesStatistics(createNoteStatistics())
+}
 
 export const archiveNote = e => {
   const id = e.target.id
@@ -17,24 +26,13 @@ export const archiveNote = e => {
   const elem = btn.closest('.my-cell')
   const matchId = +id?.match(/^.{3}(.*)/)[1]
   const indexOfElement = notes.map(element => element.id).indexOf(matchId)
-  const indexOfElementArchived = arcivedNotes.map(element => element.id).indexOf(matchId)
+  const indexOfElementArchived = archivedNotes.map(element => element.id).indexOf(matchId)
 
   if(btn.classList.contains('archive')){
-
-    elem.classList.add('d-none')
-    btn.classList.add('archived')
-    btn.classList.remove('archive')
-    arcivedNotes.push(notes[indexOfElement])
-    notes.splice(indexOfElement, 1)
-    renderNotesStatistics(createNoteStatistics())
+    archiveOneNote(archivedNotes, notes, indexOfElement, elem, btn)
   }
   else if(btn.classList.contains('archived')){
 
-    elem.classList.add('d-none')
-    btn.classList.add('archive')
-    btn.classList.remove('archived')
-    notes.push(arcivedNotes[indexOfElementArchived])
-    arcivedNotes.splice(indexOfElementArchived, 1)
-    renderNotesStatistics(createNoteStatistics())
+    archiveOneNote(notes, archivedNotes, indexOfElementArchived, elem, btn)
   }
 }
