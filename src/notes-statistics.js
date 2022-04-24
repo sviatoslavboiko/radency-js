@@ -1,13 +1,16 @@
-import {notes, arcivedNotes } from './../index.js'
+import { notes, archivedNotes } from "./../index.js"
+const countCategories = (arrOfNotes, noteCategory) => (arrOfNotes.filter(element => element.category === noteCategory)).length
+
 export const createNoteStatistics = () => {
-  const taskCount = (notes.filter(element => element.category === 'Task')).length
-  const thoughtCount = (notes.filter(element => element.category === 'Random Thought')).length
-  const ideaCount = (notes.filter(element => element.category === 'Idea')).length
-  const qouteCount = (notes.filter(element => element.category === 'Quote')).length
-  const taskArchivedCount = (arcivedNotes.filter(element => element.category === 'Task')).length
-  const thoughtArchivedCount = (arcivedNotes.filter(element => element.category === 'Random Thought')).length
-  const ideaArchivedCount = (arcivedNotes.filter(element => element.category === 'Idea')).length
-  const qouteArchivedCount = (arcivedNotes.filter(element => element.category === 'Quote')).length
+  const taskCount = countCategories(notes, 'Task')
+  const thoughtCount = countCategories(notes, 'Random Thought')
+  const ideaCount = countCategories(notes, 'Idea')
+  const qouteCount = countCategories(notes, 'Quote')
+  
+  const taskArchivedCount = countCategories(archivedNotes ,'Task')
+  const thoughtArchivedCount = countCategories(archivedNotes ,'Random Thought')
+  const ideaArchivedCount = countCategories(archivedNotes ,'Idea')
+  const qouteArchivedCount = countCategories(archivedNotes ,'Quote')
   return [
     {name: 'Task', active: taskCount, archived: taskArchivedCount},
     {name: 'Random Thought', active: thoughtCount, archived: thoughtArchivedCount},
